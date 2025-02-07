@@ -1,0 +1,14 @@
+[
+    {
+        "title": "School IT Officer",
+        "company": "Brisbane Catholic Education (Clairvaux Mackillop College)",
+        "duration": "July 2024 – Present",
+        "description": "Provided technical support for staff and students, managed Microsoft 365, Active Directory, and deployed hardware/software."
+    },
+    {
+        "title": "EUC Support Engineer",
+        "company": "NRI (1ICT)",
+        "duration": "Nov 2023 – July 2024",
+        "description": "Configured and deployed end-user devices, provided remote troubleshooting, and managed devices using Intune and Cisco Meraki."
+    }
+]

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Experience | Si Li{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">My Experience</h1>
+
+    <div class="container">
+        {% for exp in experiences %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">{{ exp.title }}</h3>
+                    <h5 class="card-subtitle mb-2 text-muted">{{ exp.company }} | {{ exp.duration }}</h5>
+                    <p class="card-text">{{ exp.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

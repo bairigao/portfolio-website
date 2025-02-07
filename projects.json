@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Event Management Web App",
+        "description": "A full-stack web application for managing events, built with Flask and SQLAlchemy.",
+        "tech_stack": ["Python", "Flask", "SQLAlchemy"],
+        "github_link": "https://github.com/bairigao/IAB207-Assignment3.git"
+    },
+    {
+        "title": "Hospital Management System",
+        "description": "A C# application managing hospital data with OOP principles and a text-based interface.",
+        "tech_stack": ["C#", ".NET"],
+        "github_link": "https://github.com/yourusername/hospital-management-system"
+    },
+    {
+        "title": "Cloud Migration Project (AWS)",
+        "description": "Migrated on-premises systems to AWS, configured domain controllers and databases, and automated tasks using Python.",
+        "tech_stack": ["AWS", "Python"],
+        "github_link": ""
+    }
+]
