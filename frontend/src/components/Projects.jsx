@@ -1,52 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FolderGit2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Modal from "@/components/ui/modal";
-import { FaPython, FaAws, FaGithub, FaDatabase, FaCode } from "react-icons/fa";
-import { SiDotnet, SiFlask } from "react-icons/si";
-import { PiFileCSharpFill } from "react-icons/pi"; 
-
-const projectsData = [
-  {
-    title: "Event Management Web Application",
-    date: "July 2024 – Nov 2024",
-    techStack: "Python, Flask, SQLAlchemy, HTML/CSS, Bootstrap, GitHub",
-    description: [
-      "Developed a full-stack event management web app where users can register, browse, and book tickets for events.",
-      "Designed and implemented a relational database using SQLAlchemy for handling users, events, and bookings.",
-      "Integrated authentication (Flask-Login, bcrypt) to ensure secure user access.",
-      "Collaborated in a team, using GitHub for version control and structured task management."
-    ],
-    icons: [FaPython, SiFlask, FaDatabase, FaGithub],
-    color: "text-blue-400"
-  },
-  {
-    title: "Hospital Management System",
-    date: "Aug 2024 – Nov 2024",
-    techStack: "C#, .NET, Object-Oriented Programming (OOP)",
-    description: [
-      "Developed a modular hospital management system for tracking patients, surgeons, and floor managers.",
-      "Implemented a text-based interface while following scalable design principles for future UI expansion.",
-      "Applied OOP concepts to ensure maintainability and reusability of code."
-    ],
-    icons: [PiFileCSharpFill, SiDotnet, FaCode],
-    color: "text-purple-400"
-  },
-  {
-    title: "Cloud Migration Project",
-    date: "Feb 2024 – Jun 2024",
-    techStack: "AWS EC2, S3, IAM, Python",
-    description: [
-      "Migrated on-premises systems to AWS, configuring cloud infrastructure for domain controllers, databases, and file storage.",
-      "Automated tasks using Python scripts and monitored network traffic for performance optimization."
-    ],
-    icons: [FaAws, FaPython],
-    color: "text-yellow-400"
-  }
-];
+import { getProjects } from "@/services/api";
+import { getIcon } from "@/utils/iconMapping";
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await getProjects();
+        console.log('Projects response:', response); // Debug log
+        setProjects(response.data || []);
+      } catch (err) {
+        console.error('Error fetching projects:', err); // Debug log
+        setError('Failed to fetch projects');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <>
@@ -58,7 +41,7 @@ const Projects = () => {
           <FolderGit2 className="w-12 h-12 mb-4 text-blue-400" />
           <h2 className="text-2xl font-bold mb-4">Featured Projects</h2>
           <div className="grid grid-cols-1 gap-2">
-            {projectsData.slice(0, 3).map((project, index) => (
+            {projects.slice(0, 3).map((project, index) => (
               <div key={index} className="flex items-center space-x-2">
                 <span className="text-blue-400">▹</span>
                 <span>{project.title}</span>
@@ -70,37 +53,51 @@ const Projects = () => {
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
-          
-          <div className="space-y-8">
-            {projectsData.map((project, index) => (
-              <div 
-                key={index}
-                className="bg-gray-700 p-6 rounded-lg"
-              >
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4">
-                  <h3 className="font-bold text-xl">{project.title}</h3>
-                  <span className="text-sm text-gray-400">{project.date}</span>
-                </div>
+          <h2 className="text-3xl font-bold">Projects</h2>
+          <div className="grid gap-6">
+            {projects.map((project, index) => (
+              <div key={index} className="bg-gray-700 p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 
-                <div className="flex gap-3 mb-4">
-                  {project.icons.map((Icon, iconIndex) => (
-                    <Icon key={iconIndex} className={`w-6 h-6 ${project.color}`} />
-                  ))}
-                </div>
+                {project.tech_stack && (
+                  <div className="flex gap-3 mb-4">
+                    {(typeof project.tech_stack === "string" 
+                      ? project.tech_stack.split(',') // If it's a string, split it
+                      : project.tech_stack // If it's already an array, use it as is
+                    ).map((tech, iconIndex) => {
+                      const IconComponent = getIcon(tech.trim().toLowerCase());
+                      return IconComponent ? (
+                        <IconComponent 
+                          key={iconIndex} 
+                          className={`w-6 h-6 ${project.color || 'text-blue-400'}`} 
+                        />
+                      ) : null;
+                    })}
+                  </div>
+                )}
+
                 
-                <div className="text-sm text-blue-400 mb-4">
-                  🛠 {project.techStack}
-                </div>
-                
-                <ul className="space-y-2">
-                  {project.description.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start space-x-2">
-                      <span className="text-blue-400 mt-1">▹</span>
-                      <span className="text-gray-300">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                {project.description && (
+                  <ul className="space-y-2">
+                    {project.description.split('|').map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex items-start space-x-2">
+                        <span className="text-blue-400 mt-1">▹</span>
+                        <span className="text-gray-300">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {project.github_url && (
+                  <a 
+                    href={project.github_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-blue-400 hover:text-blue-300"
+                  >
+                    View on GitHub →
+                  </a>
+                )}
               </div>
             ))}
           </div>
