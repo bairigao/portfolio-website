@@ -1,0 +1,16 @@
+{
+    "production": {
+        "app_function": "app.lambda_handler",
+        "aws_region": "ap-southeast-2",
+        "profile_name": "default",
+        "project_name": "portfolio-backend",
+        "runtime": "python3.11",
+        "s3_bucket": "my-zappa-portfolio-bucket",
+        "memory_size": 256,
+        "timeout_seconds": 30,
+        "environment_variables": {
+            "FLASK_DEBUG": "false"
+        },
+        "cors": true
+    }
+}
