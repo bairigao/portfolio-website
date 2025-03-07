@@ -1,4 +1,4 @@
-from app import db
+from app.py import db
 from app.models.projects import Project
 from app.models.skills import Skill
 from app.models.experience import Experience
