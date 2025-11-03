@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio website built with React and Flask|Deployed on AWS with CI/CD pipeline using GitHub Actions|Features admin panel for content management and authentication",
+    "tech_stack": "react,python,aws,docker",
+    "github_url": "https://github.com/bairigao/portfolio-website",
+    "color": "text-blue-400"
+  },
+  {
+    "id": 2,
+    "title": "Cloud Migration Project",
+    "description": "Migrated on-premise infrastructure to AWS cloud|Implemented cost optimization strategies reducing expenses by 30%|Set up automated backups and disaster recovery solutions",
+    "tech_stack": "aws,python,terraform",
+    "github_url": "",
+    "color": "text-purple-400"
+  },
+  {
+    "id": 3,
+    "title": "Asset Management System",
+    "description": "Developed internal tool for IT asset tracking and management|Integrated with SnipeIT API for automated data synchronization|Built web interface for bulk operations and reporting",
+    "tech_stack": "python,javascript,sql",
+    "github_url": "https://github.com/bairigao",
+    "color": "text-green-400"
+  }
+]

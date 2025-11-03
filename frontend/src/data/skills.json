@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Python",
+    "level": "Advanced",
+    "description": "Flask, Django, FastAPI for backend development and automation",
+    "icon_name": "python"
+  },
+  {
+    "id": 2,
+    "name": "JavaScript",
+    "level": "Advanced",
+    "description": "React, Node.js, ES6+ for full-stack development",
+    "icon_name": "javascript"
+  },
+  {
+    "id": 3,
+    "name": "AWS",
+    "level": "Intermediate",
+    "description": "EC2, S3, Lambda, CloudFront, and IAM",
+    "icon_name": "aws"
+  },
+  {
+    "id": 4,
+    "name": "Docker",
+    "level": "Intermediate",
+    "description": "Containerization and deployment",
+    "icon_name": "docker"
+  },
+  {
+    "id": 5,
+    "name": "SQL",
+    "level": "Advanced",
+    "description": "PostgreSQL, MySQL, SQLite for database management",
+    "icon_name": "database"
+  },
+  {
+    "id": 6,
+    "name": "Git",
+    "level": "Advanced",
+    "description": "Version control and collaboration",
+    "icon_name": "git"
+  },
+  {
+    "id": 7,
+    "name": "C#",
+    "level": "Intermediate",
+    "description": ".NET development and enterprise applications",
+    "icon_name": "csharp"
+  },
+  {
+    "id": 8,
+    "name": "React",
+    "level": "Advanced",
+    "description": "Modern frontend development with hooks and state management",
+    "icon_name": "react"
+  }
+]

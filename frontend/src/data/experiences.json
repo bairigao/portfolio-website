@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "IT Support Officer",
+    "company": "Brisbane Catholic Education",
+    "date": "2022 - Present",
+    "description": "Managed IT infrastructure supporting 50+ schools across Brisbane|Led cloud migration project, transitioning on-premise systems to AWS|Developed Python automation scripts for asset management and reporting|Provided technical support and training to staff and educators",
+    "highlights": "AWS Migration · Python Automation · Infrastructure Management"
+  },
+  {
+    "id": 2,
+    "title": "Web Developer (Intern)",
+    "company": "Tech Startup",
+    "date": "2021 - 2022",
+    "description": "Developed and maintained web applications using React and Flask|Implemented RESTful APIs and integrated third-party services|Collaborated with design team to create responsive user interfaces|Participated in agile development processes and code reviews",
+    "highlights": "Full-stack Development · REST APIs · Agile Methodology"
+  }
+]
