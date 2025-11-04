@@ -42,7 +42,6 @@ Open `admin-tool.html` in browser or edit JSON files directly:
 
 ### 4. Deploy to AWS
 
-See detailed instructions in **[DEPLOYMENT.md](./DEPLOYMENT.md)**
 
 Quick version:
 1. Set up AWS S3 + CloudFront
@@ -130,13 +129,6 @@ docker run -d -p 80:80 portfolio-website
 - **CI/CD**: GitHub Actions
 - **Container**: Docker + Nginx
 
-## 📊 AWS Free Tier Usage
-
-| Service | Monthly Usage | Cost |
-|---------|--------------|------|
-| S3 Storage | ~2 GB | **$0** ✅ |
-| CloudFront | ~10 GB transfer | **$0** ✅ |
-| **Total** | | **$0/month** 🎉 |
 
 ## 🎨 Customization
 
@@ -149,29 +141,12 @@ Edit `frontend/src/components/Portfolio.jsx`
 ### Update Personal Info
 Edit `frontend/src/components/QuickLinks.jsx`
 
-## 📸 Screenshots
 
-![Portfolio Homepage](docs/screenshot.png)
-*Terminal-themed portfolio with modern design*
 
 ## 🤝 Contributing
 
 This is a personal portfolio, but feel free to fork and customize for your own use!
 
-## 📄 License
 
-MIT License - feel free to use for your own portfolio
 
-## 📞 Contact
-
-**Si Li**
-- 📧 Email: lis09296313@gmail.com
-- 💼 LinkedIn: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- 🐙 GitHub: [github.com/bairigao](https://github.com/bairigao)
-
----
-
-**Built with ❤️ using React + AWS**
-
-⭐ Star this repo if you find it helpful!
 

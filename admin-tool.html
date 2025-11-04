@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin Tool</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+        }
+        .tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+        .tab:hover {
+            color: #667eea;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .json-editor {
+            width: 100%;
+            min-height: 400px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+        }
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: none;
+        }
+        .alert.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .info-box h3 {
+            margin-bottom: 10px;
+            color: #1976D2;
+        }
+        .copy-code {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Portfolio Content Editor</h1>
+        
+        <div class="info-box">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Select a tab to edit Skills, Projects, or Experience</li>
+                <li>Modify the JSON content (be careful with the format!)</li>
+                <li>Click "Download JSON" to save the file</li>
+                <li>Replace the corresponding file in <code>frontend/src/data/</code></li>
+                <li>Commit and push to trigger auto-deployment!</li>
+            </ol>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('skills')">Skills</button>
+            <button class="tab" onclick="switchTab('projects')">Projects</button>
+            <button class="tab" onclick="switchTab('experiences')">Experience</button>
+        </div>
+
+        <div id="alert" class="alert"></div>
+
+        <!-- Skills Section -->
+        <div id="skills" class="section active">
+            <h2>Skills</h2>
+            <textarea id="skills-editor" class="json-editor"></textarea>
+            <div class="button-group">
+                <button class="btn-primary" onclick="downloadJSON('skills')">Download skills.json</button>
+                <button class="btn-secondary" onclick="validateJSON('skills')">Validate JSON</button>
+                <button class="btn-secondary" onclick="resetJSON('skills')">Reset</button>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <textarea id="projects-editor" class="json-editor"></textarea>
+            <div class="button-group">
+                <button class="btn-primary" onclick="downloadJSON('projects')">Download projects.json</button>
+                <button class="btn-secondary" onclick="validateJSON('projects')">Validate JSON</button>
+                <button class="btn-secondary" onclick="resetJSON('projects')">Reset</button>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experiences" class="section">
+            <h2>Experience</h2>
+            <textarea id="experiences-editor" class="json-editor"></textarea>
+            <div class="button-group">
+                <button class="btn-primary" onclick="downloadJSON('experiences')">Download experiences.json</button>
+                <button class="btn-secondary" onclick="validateJSON('experiences')">Validate JSON</button>
+                <button class="btn-secondary" onclick="resetJSON('experiences')">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initial data templates
+        const initialData = {
+            skills: [
+                {
+                    "id": 1,
+                    "name": "Python",
+                    "level": "Advanced",
+                    "description": "Flask, Django, FastAPI for backend development",
+                    "icon_name": "python"
+                }
+            ],
+            projects: [
+                {
+                    "id": 1,
+                    "title": "My Project",
+                    "description": "Description line 1|Description line 2|Description line 3",
+                    "tech_stack": "react,python,aws",
+                    "github_url": "https://github.com/username/repo",
+                    "color": "text-blue-400"
+                }
+            ],
+            experiences: [
+                {
+                    "id": 1,
+                    "title": "Job Title",
+                    "company": "Company Name",
+                    "date": "2022 - Present",
+                    "description": "Achievement 1|Achievement 2|Achievement 3",
+                    "highlights": "Key Skills · Technologies · Impact"
+                }
+            ]
+        };
+
+        // Load saved data or use initial data
+        function loadData(type) {
+            const saved = localStorage.getItem(`portfolio_${type}`);
+            if (saved) {
+                return saved;
+            }
+            return JSON.stringify(initialData[type], null, 2);
+        }
+
+        // Initialize editors
+        document.getElementById('skills-editor').value = loadData('skills');
+        document.getElementById('projects-editor').value = loadData('projects');
+        document.getElementById('experiences-editor').value = loadData('experiences');
+
+        function switchTab(tab) {
+            // Update tabs
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update sections
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+            
+            hideAlert();
+        }
+
+        function validateJSON(type) {
+            const editor = document.getElementById(`${type}-editor`);
+            try {
+                JSON.parse(editor.value);
+                showAlert('✅ JSON is valid!', 'success');
+                // Save to localStorage
+                localStorage.setItem(`portfolio_${type}`, editor.value);
+            } catch (e) {
+                showAlert(`❌ Invalid JSON: ${e.message}`, 'error');
+            }
+        }
+
+        function downloadJSON(type) {
+            const editor = document.getElementById(`${type}-editor`);
+            try {
+                // Validate first
+                JSON.parse(editor.value);
+                
+                // Create blob and download
+                const blob = new Blob([editor.value], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${type}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                // Save to localStorage
+                localStorage.setItem(`portfolio_${type}`, editor.value);
+                showAlert(`✅ ${type}.json downloaded successfully!`, 'success');
+            } catch (e) {
+                showAlert(`❌ Cannot download: Invalid JSON - ${e.message}`, 'error');
+            }
+        }
+
+        function resetJSON(type) {
+            if (confirm('Are you sure you want to reset to the template?')) {
+                document.getElementById(`${type}-editor`).value = JSON.stringify(initialData[type], null, 2);
+                localStorage.removeItem(`portfolio_${type}`);
+                showAlert('Reset to template', 'success');
+            }
+        }
+
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert ${type}`;
+            alert.style.display = 'block';
+            setTimeout(() => hideAlert(), 5000);
+        }
+
+        function hideAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+
+        // Auto-save on change
+        ['skills', 'projects', 'experiences'].forEach(type => {
+            document.getElementById(`${type}-editor`).addEventListener('blur', function() {
+                try {
+                    JSON.parse(this.value);
+                    localStorage.setItem(`portfolio_${type}`, this.value);
+                } catch (e) {
+                    // Ignore invalid JSON on blur
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
