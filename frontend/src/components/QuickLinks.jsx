@@ -86,7 +86,7 @@ const QuickLinks = () => {
         <div className="space-y-8">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-2">Si Li</h2>
-            <p className="text-green-400">Graduate Software Developer</p>
+            <p className="text-green-400">IT Technician & Cloud Engineer</p>
           </div>
 
           <div className="bg-gray-700 p-6 rounded-lg">

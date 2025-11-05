@@ -5,6 +5,7 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Experience from './Experience';
 import QuickLinks from './QuickLinks';
+import ChatBot from './ChatBot';
 import { FaFileDownload } from 'react-icons/fa';
 
 const Portfolio = () => {
@@ -71,6 +72,9 @@ const Portfolio = () => {
         <div className="container mx-auto pb-16 px-4">
           <QuickLinks />
         </div>
+
+        {/* AI Chatbot - Custom UI (Left side, Chatbase on right) */}
+        <ChatBot />
       </div>
   
   );

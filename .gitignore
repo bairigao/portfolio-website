@@ -20,3 +20,10 @@ npm-debug.log*
 # Environment variables (if you add any later)
 .env
 .env.local
+START-HERE.md
+MIGRATION-SUMMARY.md
+DEPLOYMENT-CHECKLIST.md
+DEPLOYMENT.md
+MIGRATION-SUMMARY.md
+ICON-REFERENCE.md
+admin-tool.html
