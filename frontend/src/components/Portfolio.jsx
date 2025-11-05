@@ -14,7 +14,7 @@ const Portfolio = () => {
 
   const handleResumeDownload = () => {
   // Replace with your actual resume file path
-  const resumeUrl = 'https://lis-portfolio-website.s3.ap-southeast-2.amazonaws.com/Si+Li+Resume.pdf';
+  const resumeUrl = 'https://lis-portfolio-website.s3.ap-southeast-2.amazonaws.com/resume/Si+Li+Resume.pdf';
     
     // Create a link element
     const link = document.createElement('a');

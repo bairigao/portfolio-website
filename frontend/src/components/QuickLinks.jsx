@@ -16,26 +16,26 @@ const aboutData = {
   education: {
     degree: "Computer Science",
     school: "Queensland University of Technology",
-    gpa: "6.5/7",
-    graduation: "2024"
+    gpa: "6.7/7",
+    graduation: "2025"
   },
   highlights: [
     "Full-stack development experience with Python, C#, and SQL",
     "AWS certified with hands-on cloud migration experience",
-    "Strong background in system design and IT infrastructure",
+    "Strong background in cloud architecture and IT infrastructure",
     "Experience in building secure and scalable web applications"
   ],
   skills: [
-    "Backend: Python (Flask), C#, SQL",
+    "Cloud: AWS (EC2, S3, IAM), Azure (App Services, Virtual Machines, Docker)",
+    "Backend: Python (Flask), C#, SQL, Django",
     "Frontend: React, HTML/CSS, Bootstrap",
-    "Cloud: AWS (EC2, S3, IAM)",
-    "Tools: Git, Docker, Agile methodologies"
+    "Tools: Git, Docker, Agile methodologies, GitHub Actions, CI/CD Pipelines, IaC"
   ]
 };
 
 const socialLinks = {
   github: "https://github.com/bairigao",
-  linkedin: "https://linkedin.com/in/yourusername",
+  linkedin: "https://www.linkedin.com/in/si-li-395a49267/",
   email: "lis09296313@gmail.com"
 };
 

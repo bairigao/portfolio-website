@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "Portfolio Website",
-    "description": "A modern, responsive portfolio website built with React and Flask|Deployed on AWS with CI/CD pipeline using GitHub Actions|Features admin panel for content management and authentication",
-    "tech_stack": "react,python,aws,docker",
-    "github_url": "https://github.com/bairigao/portfolio-website",
+    "title": "Cloud Migration Lab (AWS)",
+    "description": "Built and deployed a video processing API supporting multiple formats|Designed AWS-based architecture integrating Cognito (auth), S3 (storage), DynamoDB (metadata), and Parameter Store/Secrets Manager (config)|Deployed using Docker on AWS EC2 with IAM roles for credential-free access",
+    "tech_stack": "react, python, aws, dynamoDB, docker",
+    "github_url": "https://github.com/bairigao/video-transcoding-full-aws-deployment",
     "color": "text-blue-400"
   },
   {
     "id": 2,
-    "title": "Cloud Migration Project",
-    "description": "Migrated on-premise infrastructure to AWS cloud|Implemented cost optimization strategies reducing expenses by 30%|Set up automated backups and disaster recovery solutions",
-    "tech_stack": "aws,python,terraform",
+    "title": "Geo-Intelligence ML System (Industry Project – OreFox)",
+    "description": "Developed a Python-based ML platform on Azure for automating geophysical data analysis in mineral exploration|Implemented Dockerized Django backend, deployed via Terraform, and automated workflows using GitHub Actions|Assisted in developing CNN models for gold and copper confidence prediction, visualized via Leaflet and PostGIS",
+    "tech_stack": "Azure, Python, Terraform, Docker, Django, Leaflet, PostGIS",
     "github_url": "",
     "color": "text-purple-400"
   },
   {
     "id": 3,
-    "title": "Asset Management System",
-    "description": "Developed internal tool for IT asset tracking and management|Integrated with SnipeIT API for automated data synchronization|Built web interface for bulk operations and reporting",
-    "tech_stack": "python,javascript,sql",
-    "github_url": "https://github.com/bairigao",
+    "title": "Java App – GitHub Action / Project",
+    "description": "Automated build and testing processes using GitHub Actions CI/CD workflows|Designed a calendar system linked to personalized AI motivational messages|Integrated OpenAI-based message generation to for daily productivity prompts",
+    "tech_stack": "java,github-actions,openai,sql",
+    "github_url": "https://github.com/bairigao/Fortune-Cookies-App",
     "color": "text-green-400"
   }
 ]

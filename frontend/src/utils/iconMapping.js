@@ -9,13 +9,30 @@ import {
     FaJs,
     FaCode,
     FaServer,
-    FaFlask
+    FaFlask,
+    FaBrain,
+    FaRobot,
+    FaCog,
+    FaTools,
+    FaMicrochip,
+    FaJava,
+    FaMap,
+    FaCloud
   } from "react-icons/fa";
   
   import {
     SiDotnet,
     SiPostgresql,
-    SiMongodb
+    SiMongodb,
+    SiTensorflow,
+    SiPytorch,
+    SiAmazondynamodb,
+    SiTerraform,
+    SiDjango,
+    SiLeaflet,
+    SiGithubactions,
+    SiOpenai,
+    SiMysql
   } from "react-icons/si";
 
   import { PiFileCSharpFill } from "react-icons/pi";
@@ -25,18 +42,59 @@ import {
     'react': FaReact,
     'node': FaNode,
     'python': FaPython,
-    'database': FaDatabase,
-    'git': FaGitAlt,
-    'aws': FaAws,
-    'docker': FaDocker,
     'javascript': FaJs,
+    'java': FaJava,
     'code': FaCode,
-    'server': FaServer,
     'flask': FaFlask,
+    
+    // C# variants
     'csharp': PiFileCSharpFill,
+    'c#': PiFileCSharpFill,
     'dotnet': SiDotnet,
+    
+    // Cloud Platforms
+    'aws': FaAws,
+    'azure': FaCloud,
+    'docker': FaDocker,
+    'server': FaServer,
+    
+    // Databases
+    'database': FaDatabase,
     'postgresql': SiPostgresql,
-    'mongodb': SiMongodb
+    'postgis': FaDatabase,
+    'mongodb': SiMongodb,
+    'dynamodb': SiAmazondynamodb,
+    'sql': SiMysql,
+    'mysql': SiMysql,
+    
+    // Frameworks
+    'django': SiDjango,
+    'leaflet': SiLeaflet,
+    
+    // AI & Machine Learning
+    'ai': FaBrain,
+    'machine-learning': FaRobot,
+    'machinelearning': FaRobot,
+    'ml': FaRobot,
+    'tensorflow': SiTensorflow,
+    'pytorch': SiPytorch,
+    'openai': SiOpenai,
+    
+    // DevOps & Automation
+    'automation': FaCog,
+    'devops': FaTools,
+    'cicd': FaMicrochip,
+    'ci/cd': FaMicrochip,
+    'terraform': SiTerraform,
+    'github-actions': SiGithubactions,
+    'githubactions': SiGithubactions,
+    
+    // Version Control
+    'git': FaGitAlt,
+    
+    // Maps
+    'map': FaMap,
+    'maps': FaMap
   };
   
   export const getIcon = (iconName) => {

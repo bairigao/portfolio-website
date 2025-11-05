@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "title": "IT Support Officer",
+    "title": "IT Technician",
     "company": "Brisbane Catholic Education",
-    "date": "2022 - Present",
-    "description": "Managed IT infrastructure supporting 50+ schools across Brisbane|Led cloud migration project, transitioning on-premise systems to AWS|Developed Python automation scripts for asset management and reporting|Provided technical support and training to staff and educators",
-    "highlights": "AWS Migration · Python Automation · Infrastructure Management"
+    "date": "July 2024 - Present",
+    "description": "Manage and maintain Cisco Meraki network infrastructure, including switches, routers, access points, and firewalls|Deploy, configure, and secure end-user devices using Intune, supporting over 1,800 users|Design and deploy internal applications and systems, integrating cloud-hosted and on-prem services|Maintain the school’s open source ticketing system, enhancing backend automation using Python and PowerShell|Implement and manage Active Directory, Group Policy, and system backups to align with school security standards|Automated repetitive support and deployment tasks, improving operational efficiency|Document infrastructure, network configurations, and automation scripts for consistency and maintainability",
+    "highlights": "Cisco Meraki · Intune · Python · PowerShell · Active Directory · Group Policy"
   },
   {
     "id": 2,
-    "title": "Web Developer (Intern)",
-    "company": "Tech Startup",
-    "date": "2021 - 2022",
-    "description": "Developed and maintained web applications using React and Flask|Implemented RESTful APIs and integrated third-party services|Collaborated with design team to create responsive user interfaces|Participated in agile development processes and code reviews",
-    "highlights": "Full-stack Development · REST APIs · Agile Methodology"
+    "title": "EUC support Engineer",
+    "company": "NRI (1ICT)",
+    "date": "June 2023 - July 2024",
+    "description": "Delivered remote and on-site support for enterprise clients, ensuring reliability and SLA compliance|Configured and deployed devices using Intune, Jamf, and Cisco Meraki across large environments|Managed OS image deployment, hardware troubleshooting, and software rollouts|Collaborated with infrastructure teams on automation and documentation improvements to streamline support",
+    "highlights": "Intune · Jamf · Cisco Meraki · OS image deployment · Hardware troubleshooting · Software rollouts · Automation · Documentation"
   }
 ]
