@@ -46,13 +46,13 @@ Your portfolio now has a **beautiful terminal-themed chatbot UI**! Currently, it
    ```html
    <script>
      window.embeddedChatbotConfig = {
-       chatbotId: "YOUR_CHATBOT_ID_HERE",
+       chatbotId: "hA9g_K0FRfZjFvrfFodKC",
        domain: "www.chatbase.co"
      }
    </script>
    <script
      src="https://www.chatbase.co/embed.min.js"
-     chatbotId="YOUR_CHATBOT_ID_HERE"
+     chatbotId="hA9g_K0FRfZjFvrfFodKC"
      domain="www.chatbase.co"
      defer>
    </script>

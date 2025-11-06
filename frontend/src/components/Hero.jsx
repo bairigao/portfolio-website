@@ -10,7 +10,7 @@ const Hero = ({ typingText }) => (
     <h1 className="text-4xl font-bold mb-4">
       Hi, I&apos;m <span className="text-purple-400">Si Li</span>
     </h1>
-    <p className="text-xl mb-8">Final-Year Computer Science Student | Aspiring Software Developer</p>
+    <p className="text-xl mb-8">Cloud Computing Engineer & IT Technician</p>
   </div>
 );
 
