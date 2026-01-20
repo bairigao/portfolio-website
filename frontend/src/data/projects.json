@@ -13,7 +13,7 @@
     "description": "A comprehensive web platform for managing the onboarding and offboarding of students and staff in educational institutions. Built with ASP.NET Core 10.0 backend and Next.js 16 frontend, integrated with Snipe-IT for device management.",
     "tech_stack": ".NET, React, Tailwind CSS, Vite",
     "github_url": "https://github.com/bairigao/school-onboarding-offboarding-platform"
-  }
+  },
   {
     "id": 3,
     "title": "Geo-Intelligence ML System (Industry Project - OreFox)",
